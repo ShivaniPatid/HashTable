@@ -14,6 +14,7 @@ namespace HashTableExample
             Console.WriteLine("Chosse a option");
             Console.WriteLine("1. Ability to find frequency of words in a sentence like “To be or not to be”");
             Console.WriteLine("2 Ability to find frequency of words in a large paragraph phrase “Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations”");
+            Console.WriteLine("3. Remove avoidable word from the phrase “Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations”");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -65,6 +66,32 @@ namespace HashTableExample
                     string key = Console.ReadLine();
                     string value = hashtable2.Get(key);
                     Console.WriteLine("{0} inedx value : {1}",key,value);
+                    break;
+                case 3:
+                    UCThreeMyMapNode<string, string> hashtable3 = new UCThreeMyMapNode<string, string>(18);
+                    hashtable3.Add("0", "Paranoids");
+                    hashtable3.Add("1", "are");
+                    hashtable3.Add("2", "not");
+                    hashtable3.Add("3", "paranoid");
+                    hashtable3.Add("4", "because");
+                    hashtable3.Add("5", "they");
+                    hashtable3.Add("6", "are");
+                    hashtable3.Add("7", "paranoid");
+                    hashtable3.Add("8", "but");
+                    hashtable3.Add("9", "because");
+                    hashtable3.Add("10", "they");
+                    hashtable3.Add("11", "keep");
+                    hashtable3.Add("12", "putting");
+                    hashtable3.Add("13", "themselves");
+                    hashtable3.Add("14", "deliberately");
+                    hashtable3.Add("15", "into");
+                    hashtable3.Add("16", "paranoid");
+                    hashtable3.Add("17", "avoidable");
+                    hashtable3.Add("18", "situations");
+                    Console.WriteLine("enter the key to remove the value : ");
+                    string k = Console.ReadLine();
+                    hashtable3.Remove(k);
+                    Console.WriteLine("{0} index value is removed",k);
                     break;
                 deafault:
                     Console.WriteLine("Choose a appropriate option");
